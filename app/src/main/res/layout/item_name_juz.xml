@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="juz"
+            type="com.mnashat_dev.quraanzareem.ui.model.Juz" />
+        <variable
+            name="clickListener"
+            type="com.mnashat_dev.quraanzareem.ui.mainscreenfragment.JuzListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:onClick="@{() -> clickListener.onClick(juz)}"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="87dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_numbers"
+            app:tint="@color/dark_yellow" />
+
+        <TextView
+            android:id="@+id/tv_number_juz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textColor="@color/white"
+            numberOfJuz="@{juz}"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/tv_arabic_name_juz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الجزء الأول"
+            android:textSize="20sp"
+            android:textColor="@color/dark_yellow"
+            android:textStyle="bold"
+            nameOfjuz="@{juz}"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

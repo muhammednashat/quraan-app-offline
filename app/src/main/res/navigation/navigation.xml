@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.mnashat_dev.quraanzareem.ui.mainscreenfragment.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <action
+            android:id="@+id/action_mainScreenFragment_to_readingFragment"
+            app:destination="@id/readingFragment" />
+        <action
+            android:id="@+id/action_mainScreenFragment_to_savedFragment"
+            app:destination="@id/savedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readingFragment"
+        android:name="com.mnashat_dev.quraanzareem.ui.ReadingFragment"
+        android:label="fragment_reading"
+        tools:layout="@layout/fragment_reading" >
+
+        <argument
+            android:name="numberOfPage"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.mnashat_dev.quraanzareem.ui.SavedFragment"
+        android:label="SavedFragment" >
+
+    </fragment>
+</navigation>
